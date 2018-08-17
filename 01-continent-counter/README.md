@@ -23,7 +23,7 @@ We don't want to count any land tiles belonging to any of the other continents.
 Also, as in Civilization III, we'll say that tiles touching only at the corners are still considered to be on the same 
 continent (since units could walk along diagonals).
 
-### Language - Resources
+### Language - Libraries - Tools
 
 - [Python 3][1]
 - [JavaScript][2]
