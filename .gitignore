@@ -1,0 +1,20 @@
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Environment files
+.env
+venv
+
+# PyCharm IDE project files
+*.iml
+.idea/
+
+# Python bytecode
+__pycache__/
+
+# Dataset files
+*.gz
+*.json
