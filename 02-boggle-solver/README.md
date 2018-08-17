@@ -61,7 +61,7 @@ This folder contains two versions of the solution.
     - `dictionary.py`: module to implement the boggle dictionary using a trie
     - `trienode.py`: class that represents a trie node
 
-The other in the `javascript` subfolder:
+- The other in the `javascript` subfolder:
     - `boggle_solver.html`: HTML file to display results of the Boggle solver challenge
     - `boggle_solver.js`: JavaScript module that holds all the challenge code
     - `styles/main.css`: simple stylesheet to accompany the HTML file
