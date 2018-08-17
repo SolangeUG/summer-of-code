@@ -52,7 +52,7 @@ This challenge contains two versions of the solution.
 `01-continent-counter` subfolder.
     - For the Python version:
         - navigate into the `python` subfolder,
-        - launch the application by running `python main.py` in the console.
+        - launch the application by running `python continent_counter.py` in the console.
 
     - For the JavaScript version:
         - navigate into the `javascript` subfolder,
