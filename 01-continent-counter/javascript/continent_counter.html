@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Continent Counter Application in Civilization III">
+        <meta name="author" content="Solange Umuhire Gasengayire">
+        <title>Continent Counter Application in Civilization III</title>
+        <!-- Link to favicon -->
+        <link rel="icon" href="./assets/favicon.ico">
+        <!-- Use Bootstrap 4.0.0 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+        <!-- Own stylesheets -->
+        <link rel="stylesheet" href="./styles/main.css">
+        <!-- JS script-->
+        <script type="text/javascript" src="continent_counter.js"></script>
+    </head>
+    <body>
+        <header>
+            <!-- Fixed navbar -->
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/civilization.jpg" alt="Civilization III" style="width:32px;height:32px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="#">
+                              Continent Counter <span class="sr-only">(current)</span>
+                          </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Page content -->
+        <main role="main" class="container">
+
+            <h3>Civilization III Continent Counter</h3>
+
+            <section>
+                <blockquote>
+                    <cite>
+                        For more information,
+                        <a href="https://en.wikipedia.org/wiki/Civilization_III" target="_blank">Wikipedia</a>
+                        to the rescue!
+                    </cite>
+                </blockquote>
+                <div>
+                    "Civilization III, like the other Civilization games, entails building an empire, from the ground up,
+                    beginning in 4,000 BC and continuing slightly beyond the modern day. The player must construct and
+                    improve cities, train military and non-military units, improve terrain, research technologies,
+                    build Wonders of the World, make war or peace with neighboring civilizations, and so on. <br/>
+                    The player must balance a good infrastructure, resources, diplomatic and trading skills, technological
+                    advancement, city and empire management, culture, and military power to succeed."
+                </div>
+            </section>
+
+            <section id="worlGeneration">
+                <h4>Enter valid number for size of world to generate:</h4>
+                <form>
+                    <div class="form-group row">
+                        <label for="sizeInput" class="col-sm-1 col-form-label" >Size</label>
+                        <div class="col-sm-4">
+                            <input id="sizeInput" class="form-control" type="number"
+                                   min="1" max="22" name="size" placeholder="min: 1, max: 22" autofocus
+                                   onfocusout="checkUserInput()" onfocusin="initialize()">
+                            <label id="errorLabel" class="text-danger"></label>
+                        </div>
+                        <div class="col-sm-7">
+                            <button id="submitButton" class="btn btn-secondary" onclick="main()" type="submit" >
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section id="continentCounter" hidden>
+                <div id="results" class="border border-info row">
+                    <pre id="generatedWorld" class="col-sm-12 text-info"></pre>
+                    <pre id="largestContinents" class="col-sm-12 text-info"></pre>
+                    <pre id="benchmark" class="col-sm-12 text-info"></pre>
+                </div>
+                <button id="reinitButton" class="btn btn-dark" onclick="initialize()" type="submit" >
+                    Restart
+                </button>
+            </section>
+
+
+        </main>
+
+        <!-- Sticky footer -->
+        <footer class="footer">
+            <div class="container">
+                <span class="text-muted">© 2018 Solange Umuhire Gasengayire</span>
+            </div>
+        </footer>
+
+        <!-- Bootstrap related scripts -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+/************************
+ * Sticky footer styles *
+ ************************/
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  margin-top: 20px;
+}
+
+section {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+form {
+  margin-top: 20px;
+}
+
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  /* Vertically center the text there */
+  line-height: 40px;
+  background-color: #F5F5F5;
+}
+
+
+/*******************
+ * Custom page CSS *
+ *******************/
+
+body > .container {
+  padding: 60px 15px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+#continentCounter {
+  margin-top: 40px;
+}
+
+#results {
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  margin-left : 4px;
+  margin-bottom: 20px;
+}
