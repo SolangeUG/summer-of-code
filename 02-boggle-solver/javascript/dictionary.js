@@ -71,6 +71,55 @@ class Dictionary {
      * This dictionary is implemented as a trie.
      */
     loadDictionary() {
+        let txtContent = "";
+        // load content of dictionary file
+        let fileReader = new XMLHttpRequest();
+        fileReader.open("GET", this.dictFile, false);
+        fileReader.onreadystatechange = function () {
+            if (fileReader.readyState === 4 && fileReader.status === 200) {
+                txtContent = fileReader.responseText;
+            }
+        };
+        fileReader.send(null);
 
+        // add each word of the file to our trie dictionary
+        let dictArray = txtContent.split("\n");
+        for (let i = 0; i < dictArray.length; i++) {
+            let word = dictArray[0];
+            if (word !== null) {
+                word = word.trim();
+                this.addWord(word);
+            }
+        }
+    }
+
+    /**
+     * Add a word to the dictionary
+     * @param word: the new word to be added
+     * @return {boolean} true if the word is successfully added to the trie,
+     *                   false if it already exists in the trie
+     */
+    addWord(word) {
+        let upperWord = word.toUpperCase();
+        if (this.isWord(upperWord)) {
+            // no need to add this word if it's already in our dictionary
+            return false;
+        }
+
+        // at this point, word can be added to our dictionary
+        let current = this.rootNode;
+        for (let i = 0; i < upperWord.length; i++) {
+            let char = word.charAt(i);
+            let childNode = current.getChild(char);
+            // a character is added ONLY if it doesn't exist already
+            if (childNode == null) {
+                childNode = current.doInsert(char);
+            }
+            childNode = current;
+        }
+
+        // at this point, all the characters of the word have been added to dictionary
+        current.endsWorld = true;
+        return true;
     }
 }
