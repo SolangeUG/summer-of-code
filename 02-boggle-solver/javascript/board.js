@@ -66,8 +66,18 @@ class Board {
                 neighbours.push([i, j]);
             }
         }
-        let ndx = neighbours.indexOf(position);
-        if (neighbours.indexOf(position) > -1) {
+
+        // determine element equivalent to position in the neighbours array
+        let ndx = -1;
+        for (let i = 0; i < neighbours.length; i++) {
+            let element = neighbours[i];
+            if (element[0] === position[0] && element[1] === position[1]) {
+                ndx = i;
+                break;
+            }
+        }
+        // remove element equivalent to position from the neighbours array
+        if (ndx > -1) {
             neighbours.splice(ndx, 1);
         }
         return neighbours;
