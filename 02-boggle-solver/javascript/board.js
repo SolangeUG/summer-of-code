@@ -63,7 +63,7 @@ class Board {
 
         for (let i= 0; i < adjRows.length; i++) {
             for (let j = 0; j < adjCols.length; j++) {
-                neighbours.push([i, j]);
+                neighbours.push([adjRows[i], adjCols[j]]);
             }
         }
 
