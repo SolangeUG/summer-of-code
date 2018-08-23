@@ -55,10 +55,12 @@ function main() {
 
             console.log('\nAll valid words found on the board:');
             let wordList = boggleSolver.validWords;
+            htmlStr += wordList.join(', ');
+
             wordList.forEach((word) => {
-                htmlStr += word + ", ";
                 console.log(word);
             });
+
 
             // create result object
             let result = {};
