@@ -56,7 +56,7 @@ function main() {
             console.log('\nAll valid words found on the board:');
             let wordList = boggleSolver.validWords;
             wordList.forEach((word) => {
-                htmlStr += word + "\n";
+                htmlStr += word + ", ";
                 console.log(word);
             });
 
@@ -66,7 +66,7 @@ function main() {
             result['words'] = wordList.sort();
             let resultAsString = JSON.stringify(result);
 
-            htmlStr += "\nResult object:\n";
+            htmlStr += "\n\nResult object:\n";
             htmlStr += resultAsString + "\n";
 
             console.log('\nResult object:', resultAsString);
